@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('activities', function (Blueprint $table) {
+        Schema::create('referers', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id');
-            $table->string('details');
+            $table->string('referer_id');
+            $table->string('status')->default('pending');
+            $table->decimal('conversion')->default(0.00);
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activities');
+        Schema::dropIfExists('referers');
     }
 };

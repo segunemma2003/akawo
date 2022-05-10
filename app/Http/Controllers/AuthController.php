@@ -15,6 +15,11 @@ class AuthController extends Controller
     public function __construct() {
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
+
+    public function allUser() {
+        $user = User::all();
+        return response()->json(['data'=>$user], 200);
+    }
     /**
      * Get a JWT via given credentials.
      *
@@ -33,6 +38,16 @@ class AuthController extends Controller
         }
         return $this->createNewToken($token);
     }
+
+
+
+    public function updateUser(Request $request)
+    {
+        $userId = auth()->user()->id;
+        $user = User::whereId($userId)->first();
+        tap($user)->update($request->all());
+        return response(['data'=>$user], 200);
+    }
     /**
      * Register a User.
      *
@@ -40,7 +55,10 @@ class AuthController extends Controller
      */
     public function register(Request $request) {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|between:2,100',
+            'fname' => 'required|string|between:2,100',
+            'lname' => 'required|string|between:2,100',
+            'referer' => 'string|nullable',
+            'phone' => 'required|unique:users',
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
         ]);
@@ -51,6 +69,8 @@ class AuthController extends Controller
                     $validator->validated(),
                     ['password' => bcrypt($request->password)]
                 ));
+                $user->mcode = time()."-".uniqid();
+                $user->save();
                 $token = auth()->attempt(['email'=>$request->email, 'password'=>$request->password]);
                 return $this->createNewToken($token);
         // return response()->json([
@@ -65,6 +85,9 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function logout() {
+        $user = User::whereId(auth()->user()->id)->first();
+        $user->current_status = 'offline';
+        $user->save();
         auth()->logout();
         return response()->json(['message' => 'User successfully signed out']);
     }
@@ -92,6 +115,9 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     protected function createNewToken($token){
+        $user = User::whereId(auth()->user()->id)->first();
+        $user->current_status = 'online';
+        $user->save();
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',

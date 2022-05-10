@@ -9,7 +9,7 @@ class SettingsController extends Controller
 {
     public function index()
     {
-        $settings = Settings::latest()->get();
+        $settings = Settings::where('user_id', auth()->user()->id)->latest()->get();
 
         return response(['data' => $settings ], 200);
     }

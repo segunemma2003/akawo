@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('vaults', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
+            $table->enum('type',['savings','vault']);
+            $table->string('name');
+            $table->enum('interval',['daily','weekly','monthly']);
+            $table->string('start_date');
+            $table->string('end_date');
+            $table->decimal("expected_amount")->default(0.00);
+            $table->string("status")->default("ongoing");
+            $table->decimal("amount")->default((0.00));
+            $table->string('billing_method')->nullable();
             $table->timestamps();
         });
     }

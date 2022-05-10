@@ -9,7 +9,7 @@ class TicketController extends Controller
 {
     public function index()
     {
-        $tickets = Ticket::latest()->get();
+        $tickets = Ticket::where('user_id', auth()->user()->id)->latest()->get();
 
         return response(['data' => $tickets ], 200);
     }

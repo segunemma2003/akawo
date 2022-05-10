@@ -9,7 +9,7 @@ class ActivityController extends Controller
 {
     public function index()
     {
-        $activities = Activity::latest()->get();
+        $activities = Activity::with('user')->where('user_id', auth()->user()->id)->latest()->get();
 
         return response(['data' => $activities ], 200);
     }

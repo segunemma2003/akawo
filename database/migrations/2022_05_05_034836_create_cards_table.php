@@ -13,10 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('activities', function (Blueprint $table) {
+        Schema::create('cards', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->bigInteger('user_id');
-            $table->string('details');
+            $table->string('card_no');
+            $table->string('expiry_date');
+            $table->string('cvv');
+            $table->string('channel')->nullable();
+            $table->string('channel_id')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activities');
+        Schema::dropIfExists('cards');
     }
 };

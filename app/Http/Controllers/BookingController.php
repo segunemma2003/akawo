@@ -9,7 +9,7 @@ class BookingController extends Controller
 {
     public function index()
     {
-        $bookings = Booking::latest()->get();
+        $bookings = Booking::where('user_id', auth()->user()->id)->latest()->get();
 
         return response(['data' => $bookings ], 200);
     }

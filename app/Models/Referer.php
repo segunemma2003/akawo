@@ -4,14 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-class Vault extends Model
+class Referer extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-
-
-    public function user()
-    {
-        return $this->belongsTo('App\Models\User','user_id');
-    }
 }

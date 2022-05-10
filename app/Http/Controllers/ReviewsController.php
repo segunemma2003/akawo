@@ -9,7 +9,7 @@ class ReviewsController extends Controller
 {
     public function index()
     {
-        $reviews = Reviews::latest()->get();
+        $reviews = Reviews::where('user_id', auth()->user()->id)->latest()->get();
 
         return response(['data' => $reviews ], 200);
     }

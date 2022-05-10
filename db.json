@@ -1,0 +1,142 @@
+{
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTA4NjY4LCJpYXQiOjE2NTE5NDY2ODQsIm5iZiI6MTY1MTk0NjY4NCwiZXhwIjoxNjUyMDMzMDg0fQ.bVYyW_7FVv1W57aHa6rViqXsMTwgXyc7Nh5xcsdZUws",
+  "user": {
+    "integrations": [
+      {
+        "business_name": "cotenant ventures",
+        "business_type": "registered",
+        "short_name": null,
+        "id": 129496,
+        "logged_in_user_role": {
+          "id": 33,
+          "name": "developer-support",
+          "description": "This role grants users the permissions necessary for providing technical support"
+        },
+        "country_code": "NG",
+        "country": 1,
+        "mfa": {
+          "is_required": false,
+          "enforcement_deadline": null
+        }
+      },
+      {
+        "business_name": "ighost",
+        "business_type": "starter",
+        "short_name": null,
+        "id": 194735,
+        "logged_in_user_role": {
+          "id": 34,
+          "name": "admin",
+          "description": "This role grants users the permissions to manage everything on the dashboard"
+        },
+        "country_code": null,
+        "country": 1,
+        "mfa": {
+          "is_required": false,
+          "enforcement_deadline": null
+        }
+      }
+    ],
+    "email": "segunemma2003@gmail.com",
+    "first_name": "Bamidele",
+    "last_name": "Segun",
+    "phone": "09036444724",
+    "area_code": "0",
+    "calling_code": "234",
+    "registration_complete": true,
+    "last_login": "2022-05-07T18:04:11.000Z",
+    "wt_access": "none",
+    "is_developer": true,
+    "job_title": "developer",
+    "truecaller_verified": false,
+    "drip_tag": "merchant",
+    "mfa_enabled": true,
+    "email_verified": false,
+    "id": 108668,
+    "invited_by": null,
+    "current_integration": 194735,
+    "passwordLastResetAt": "2022-05-07T18:03:09.000Z",
+    "createdAt": "2019-02-12T13:41:32.000Z",
+    "updatedAt": "2022-05-07T18:04:11.000Z",
+    "dashboard_preferences": {
+      "pagination": {},
+      "timezone": "UTC"
+    },
+    "display_state": "test",
+    "role": {
+      "value": 35175782154239,
+      "name": "admin",
+      "description": "This role grants users the permissions to manage everything on the dashboard",
+      "integration": 0,
+      "service": "dashboard",
+      "id": 34,
+      "organization": 1,
+      "createdAt": "2018-05-10T23:40:26.000Z",
+      "updatedAt": "2018-09-12T17:28:31.000Z",
+      "isDeleted": false,
+      "is_custom": false
+    },
+    "permissions": [
+      "api-key-*",
+      "api-key-view",
+      "user-view",
+      "user-*",
+      "metrics-*",
+      "settings-*",
+      "settings-view",
+      "transaction-view",
+      "transaction-export",
+      "transaction-dispute",
+      "customer-view",
+      "customer-add",
+      "customer-*",
+      "transfer-view",
+      "transfer-*",
+      "transfer-export",
+      "balance-view",
+      "balance-export",
+      "page-view",
+      "page-*",
+      "plan-view",
+      "plan-*",
+      "settlement-view",
+      "settlement-export",
+      "paymentrequest-view",
+      "paymentrequest-*",
+      "subaccount-*",
+      "subaccount-view",
+      "user-add",
+      "customer-insights",
+      "accounts-*",
+      "accounts-view",
+      "charge-*",
+      "request-payout",
+      "product-view",
+      "product-*",
+      "pos-terminal-*",
+      "applepay-*",
+      "refund-pwt",
+      "corporate-cards-*",
+      "corporate-cards-view"
+    ],
+    "show_mfa_feature": true
+  },
+  "selected_integration": {
+    "business_name": "ighost",
+    "business_type": "starter",
+    "short_name": null,
+    "id": 194735,
+    "logged_in_user_role": {
+      "id": 34,
+      "name": "admin",
+      "description": "This role grants users the permissions to manage everything on the dashboard"
+    },
+    "country_code": null,
+    "country": 1,
+    "mfa": {
+      "is_required": false,
+      "enforcement_deadline": null
+    }
+  },
+  "token_expiry": 1652033084
+}
