@@ -42,7 +42,7 @@ class Paystack{
             "recipient"=> $recipient,
             "reason"=> "Self initiated"
         ]);
-        \Log::info($response);
+        Log::info($response);
 
         if($response->status() == 200){
             $jsonData = $response->json();
