@@ -25,13 +25,15 @@ return [
              *
              * It should implement \Spatie\WebhookClient\SignatureValidator\SignatureValidator
              */
-            'signature_validator' => \App\Handler\CustomSignatureValidator::class,
+            'signature_validator' => App\Handler\CustomSignatureValidator::class,
             // \Spatie\WebhookClient\SignatureValidator\DefaultSignatureValidator::class,
 
             /*
              * This class determines if the webhook call should be stored and processed.
              */
-            'webhook_profile' => \Spatie\WebhookClient\WebhookProfile\ProcessEverythingWebhookProfile::class,
+            'webhook_profile' => App\Handler\ProcessWebhook::class,
+
+            // \Spatie\WebhookClient\WebhookProfile\ProcessEverythingWebhookProfile::class,
 
             /*
              * This class determines the response on a valid webhook call.

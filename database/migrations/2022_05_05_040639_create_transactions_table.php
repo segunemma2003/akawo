@@ -17,6 +17,10 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->string('details');
+            $table->string('transaction_code')->nullable();
+            $table->string('saving_id')->nullable();
+            $table->string('status')->nullable();
+            $table->string('amount')->nullable();
             $table->timestamps();
         });
     }

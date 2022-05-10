@@ -45,6 +45,7 @@ class VaultController extends Controller
         $data = $request->all();
         $user = User::whereId(auth()->user()->id)->first();
         $card = Card::whereId($data['card_no'])->first();
+
         $res = $this->paystack->charge($data['amount'],$card->authorization_code, $user->email);
         \Log::info($card->authorization_code);
         if($res['status'] == false){

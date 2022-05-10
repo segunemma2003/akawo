@@ -22,6 +22,15 @@ return new class extends Migration
             $table->string('cvv');
             $table->string('channel')->nullable();
             $table->string('channel_id')->nullable();
+            $table->string('account_number')->nullable();
+            $table->string('recipient_code')->nullable();
+            $table->string('reference')->nullable();
+            $table->string('last4')->nullable();
+            $table->string('account_name')->nullable();
+            $table->string('signature')->nullable();
+            $table->string('bank')->nullable();
+            $table->string('bank_code')->nullable();
+            $table->string('authorization_code')->nullable();
             $table->timestamps();
         });
     }
